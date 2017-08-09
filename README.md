@@ -1,2 +1,2 @@
 # Mingle 2
-Remake of my old project from scratch
+Location-based social-networking App. Remake of my old project from scratch
