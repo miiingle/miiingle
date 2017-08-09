@@ -10,6 +10,19 @@ db.userloc.insert({
 })
 ```
 
+## Query
+```javascript
+db.userloc.find({
+	location: {
+		$near: {
+			$geometry: { type: "Point",  coordinates: [ -73.9667, 40.78 ] },
+            		$minDistance: 1000,
+            		$maxDistance: 5000
+		}
+	}
+})
+```
+
 ###### Resources:
 - [Documentation: Mongo GeoQueries](https://docs.mongodb.com/manual/geospatial-queries/)
 - [Article About GeoLocation Storage](https://ralphbarbagallo.com/2011/04/02/an-overview-of-geospatial-databases/)
