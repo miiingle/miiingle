@@ -1,15 +1,16 @@
 package com.mingle2.poc.neo4j.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
+@EqualsAndHashCode(exclude = {"addresses", "friends"})
+@ToString(exclude = {"addresses", "friends"})
 @NoArgsConstructor
 @AllArgsConstructor
 @NodeEntity
@@ -26,4 +27,9 @@ public class Person {
 
     String name;
     Integer age;
+
+    public void addFriend(Person friend) {
+        if (friends == null) friends = new HashSet<>();
+        friends.add(friend);
+    }
 }
