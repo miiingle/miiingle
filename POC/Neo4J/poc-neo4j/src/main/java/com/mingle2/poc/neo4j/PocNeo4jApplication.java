@@ -21,6 +21,13 @@ public class PocNeo4jApplication implements CommandLineRunner {
 	@Autowired
 	PersonRepository personRepository;
 
+    /**
+     
+     curl -i -X PUT -H "Content-Type:text/uri-list" -d "http://localhost:17001/persons/5"  http://localhost:17001/persons/10/friends
+
+     * @param strings
+     * @throws Exception
+     */
 	@Override
 	public void run(String... strings) throws Exception {
 		Scanner scanner = new Scanner(System.in);
