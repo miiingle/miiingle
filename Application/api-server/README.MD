@@ -7,4 +7,23 @@ The Brain of the Mingle System.
 - Closed system, should only be accessed via Firebase
 
 ## Configuration
-- [AppEngine Flexible](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/flexible/helloworld/pom.xml)
+- [AppEngine Flexible: Java Only](https://cloud.google.com/appengine/docs/flexible/java/dev-java-only)
+
+### Development Setup
+- Install Maven
+- Install GCloud
+- Install Neo4j
+- Install MongoDB
+- Setup IntelliJ IDEA
+
+### Running Locally
+```
+mvn spring-boot:run
+```
+
+### Deploying
+```
+mvn clean appengine:deploy \
+    -Dapp.deploy.version="v1-0" \
+    -Dapp.deploy.promote=false
+```
