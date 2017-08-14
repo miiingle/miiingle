@@ -10,46 +10,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Scanner;
 
+/**
+
+ add person 11 as friend of person 12
+ curl -i -X PUT -H "Content-Type:text/uri-list" -d "http://localhost:17001/persons/11"  http://localhost:17001/persons/12/friends
+
+ delete friend 12 from person 11
+ curl -i -X DELETE http://localhost:17001/persons/11/friends/12
+ */
 @SpringBootApplication
 @Log
-public class PocNeo4jApplication implements CommandLineRunner {
+public class PocNeo4jApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PocNeo4jApplication.class, args);
-	}
-
-	@Autowired
-	PersonRepository personRepository;
-
-    /**
-     
-     curl -i -X PUT -H "Content-Type:text/uri-list" -d "http://localhost:17001/persons/5"  http://localhost:17001/persons/10/friends
-
-     * @param strings
-     * @throws Exception
-     */
-	@Override
-	public void run(String... strings) throws Exception {
-		Scanner scanner = new Scanner(System.in);
-		while (true) {
-            log.info("Add Friends:");
-			Long f1 = scanner.nextLong();
-			Long f2 = scanner.nextLong();
-
-			try {
-				Person p1 = personRepository.findOne(f1);
-				Person p2 = personRepository.findOne(f2);
-
-                log.info("P1: " + p1 + " P2:" + p2);
-                log.info("Go?");
-                log.info("=============================");
-				p1.addFriend(p2);
-
-				personRepository.save(p1);
-                log.info("Saved...");
-			} catch (Exception e) {
-				scanner.close();
-			}
-		}
 	}
 }

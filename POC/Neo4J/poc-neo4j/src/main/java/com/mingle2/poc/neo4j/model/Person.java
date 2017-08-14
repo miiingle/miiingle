@@ -22,7 +22,7 @@ public class Person {
     @Relationship(type = "LIVES_IN", direction = Relationship.INCOMING)
     Set<Address> addresses;
 
-    @Relationship(type = "FRIEND_OF", direction = Relationship.UNDIRECTED)
+    @Relationship(type = "FRIEND_OF", direction = Relationship.INCOMING)
     Set<Person> friends;
 
     String name;
