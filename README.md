@@ -9,6 +9,6 @@ Location-based social-networking App. Remake of my old project from scratch
 - [iOS 11](https://developer.apple.com/ios/): iOS Mobile Client Framework
 
 ## Runtime
-- [Google App Engine](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/helloworld-springboot): Scalable Application Runtime
+- [Google App Engine](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/helloworld-springboot): Scalable Application Runtime for hosting the API Server
 - [FireBase](https://firebase.google.com/docs/): Client-Server Data Middleman Service 
 - [Google Compute Engine](https://cloud.google.com/compute/): Runtime Platform for MongoDB and Neo4J
