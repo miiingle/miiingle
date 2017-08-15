@@ -3,6 +3,7 @@
 ## Development server
 ```
 npm start
+ng serve --env=custom
 ```
 
 ## Deploying the App
@@ -26,3 +27,11 @@ touch .firebaserc
   }
 }
 ```
+- configure environment variables
+```
+cp src/environments/environment.prod.ts src/environments/environment.custom.ts
+```
+
+###### Resources:
+- [Angular Environment Variables](http://tattoocoder.com/angular-cli-using-the-environment-option/)
+- [Angular Fire](https://github.com/angular/angularfire2)
