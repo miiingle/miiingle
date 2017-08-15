@@ -8,7 +8,7 @@ ng serve --env=custom
 
 ## Deploying the App
 ```
-ng build --env=custom
+ng build --prod --aot --env=custom
 firebase deploy
 ```
 
