@@ -3,13 +3,11 @@
 ## Development server
 ```
 npm start
-ng serve --env=custom
 ```
 
 ## Deploying the App
 ```
-ng build --prod --aot --env=custom
-firebase deploy
+npm run deploy
 ```
 
 ## Initial Setup
