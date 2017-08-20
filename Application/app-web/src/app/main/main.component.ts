@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+
 import { environment } from '../../environments/environment';
 
 import { Observable } from 'rxjs/Observable';
+
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+
 
 @Component({
   selector: 'app-main',
@@ -18,12 +22,21 @@ export class MainComponent implements OnInit {
   items: FirebaseListObservable<any[]>;
   user: Observable<firebase.User>;
 
-  constructor(db: AngularFireDatabase, public afAuth: AngularFireAuth) {
-  	this.items = db.list('/items');
-  	this.user = afAuth.authState;
-  }
+  constructor(public db: AngularFireDatabase, public afAuth: AngularFireAuth, private router: Router) {}
 
   ngOnInit() {
+    this.items = this.db.list('/items');
+    this.user = this.afAuth.authState;
+
+    this.afAuth.authState.subscribe(auth => {
+      if (!auth) {
+        this.router.navigateByUrl("/login");
+      }
+    });
+  }
+
+  logout() {
+    this.afAuth.auth.signOut();
   }
 
 }
