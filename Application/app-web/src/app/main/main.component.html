@@ -11,6 +11,7 @@
   </li>
 </ul>
 
-<div> {{ (user | async)?.uid }} </div>
+<div> Hello {{ (user | async)?.displayName }} </div>
+
 <button (click)="login()">Login</button>
 <button (click)="logout()">Logout</button>
