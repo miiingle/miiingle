@@ -11,6 +11,9 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {MainComponent} from './main/main.component';
+import {HomeComponent} from './main/home/home.component';
+import {ProfileComponent} from './main/profile/profile.component';
+
 
 const appRoutes: Routes = [
   {
@@ -19,7 +22,22 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    component: MainComponent
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      }
+    ]
   }
 ];
 
@@ -27,7 +45,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
