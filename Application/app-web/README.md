@@ -31,6 +31,7 @@ cp src/environments/environment.prod.ts src/environments/environment.custom.ts
 ```
 
 ###### Resources:
+- [RxJS](http://reactivex.io/rxjs/)
 - [Angular Environment Variables](http://tattoocoder.com/angular-cli-using-the-environment-option/)
 - [Angular Fire](https://github.com/angular/angularfire2)
 - [Firebase Authentication: Facebook](https://firebase.google.com/docs/auth/web/facebook-login)
