@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
     private auth: AngularFireAuth) {
 
     this.user = auth.authState;
-    this.profileChanges = db.list("/items/abs");
+    this.profileChanges = db.list("/profiles");
   }
 
   ngOnInit() {
@@ -32,12 +32,9 @@ export class ProfileComponent implements OnInit {
 
   onSubmit() {
     console.log("submitted" + this.form);
-
-    this.db.list("/items/abc").push({"profile": this.userProfile});
-
-    this.user.merge(this.profileChanges).subscribe(res => {
-      console.log()
-    })
+    this.user.subscribe((u: firebase.User) => {
+      let userDB = this.profileChanges.set( u.uid, this.userProfile);
+    });
   }
 
   onReset() {
