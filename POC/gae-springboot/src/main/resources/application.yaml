@@ -1,0 +1,3 @@
+#spring.cloud.gcp:
+#  project-id: [YOUR_GCP_PROJECT_ID_HERE]
+#  credentials.location: file:[LOCAL_FS_CREDENTIALS_PATH]

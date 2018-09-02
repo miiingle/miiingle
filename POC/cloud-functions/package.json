@@ -1,0 +1,19 @@
+{
+  "name": "poc-cloud-functions",
+  "version": "1.0.0",
+  "description": "An experiment to try out cloud functions to glue together firebase and app engine via message passing in pubsub",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "deploy": "gcloud beta functions deploy onAuthCreate --region=us-east1 --trigger-event=providers/firebase.auth/eventTypes/user.create --trigger-resource=miiingle-net --runtime=nodejs8 --entry-point=onAuthCreate"
+  },
+  "author": "lbibera",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/pubsub": "^0.19.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}

@@ -1,0 +1,6 @@
+<div *ngIf="afAuth.user | async as user; else showLogin" class="fullscreen">
+  <app-nav></app-nav>
+</div>
+<ng-template #showLogin>
+  <app-auth class="fullscreen"></app-auth>
+</ng-template>

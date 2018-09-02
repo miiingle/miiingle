@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/prototype-ui-web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
