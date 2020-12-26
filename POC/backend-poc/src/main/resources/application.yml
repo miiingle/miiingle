@@ -1,3 +1,6 @@
 micronaut:
   application:
-    name: poc
+    name: backend-poc
+  server:
+    cors:
+      enabled: true

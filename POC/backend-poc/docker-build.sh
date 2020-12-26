@@ -1,4 +1,5 @@
 #!/bin/sh
+./gradlew assemble
 docker build . -t net.miiingle/backend-poc:latest
 echo
 echo
