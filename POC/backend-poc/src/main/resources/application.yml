@@ -1,6 +1,11 @@
 micronaut:
   application:
     name: backend-poc
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
   server:
     cors:
       enabled: true
