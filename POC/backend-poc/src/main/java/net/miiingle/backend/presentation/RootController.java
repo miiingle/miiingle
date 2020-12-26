@@ -2,10 +2,12 @@ package net.miiingle.backend.presentation;
 
 import io.micronaut.core.annotation.Introspected;
 import io.micronaut.http.MediaType;
-import io.micronaut.http.annotation.Controller;
-import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.Post;
-import io.micronaut.http.annotation.Produces;
+import io.micronaut.http.annotation.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 import javax.annotation.Nullable;
 
@@ -37,9 +39,24 @@ public class RootController {
         return new Pong(System.currentTimeMillis(), ping);
     }
 
+    @Operation(
+            operationId = "echo",
+            summary = "echo the request",
+            responses = {
+                    @ApiResponse(
+                            description = "same as the body",
+                            content = @Content(
+                                    mediaType = MediaType.APPLICATION_JSON,
+                                    schema = @Schema(implementation = Pong.class)))
+            })
     @Post("/echo")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Pong ping(Pong pong) {
+    public Pong echo(
+            @RequestBody(
+                    description = "the pong",
+                    content = @Content(
+                            schema = @Schema(implementation = Pong.class))) Pong pong) {
         return pong;
     }
 
