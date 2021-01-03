@@ -1,23 +1,22 @@
 # Miiingle.NET
 Your local professional network!
 
-## Dev Stack
+# Dev Stack
 - Postman (API Demo, Design, Tests, Documentation)
 - Figma (UI Demo)
 - Micronaut (Backend)
 - iOS/Swift (Frontend)
-
 
 ## Runtime and Deployment
 - AWS EKS and Spot Instances (Backend Runtime)
 - AWS Cognito (Auth Server)
 - AWS RDS/Postgres (Database)
 
-# Build + Automation
+## Build + Automation
 - Terraform
 - Travis
 
-## Feature Roadmap
+# Feature Roadmap
 - Basic Social Networking
 ```
 only people with actual connections can proceed - the mechanism TBD
