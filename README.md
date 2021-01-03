@@ -20,7 +20,14 @@ Your local professional network!
 ## Features
 - Basic Social Networking
 ```
-only people with actual connections can proceed
+only people with actual connections can proceed - the mechanism TBD
+
+useful info:
+- name
+- birthdate
+- contact information
+- jobs
+- skills
 ```
 - Meetups
 ```
