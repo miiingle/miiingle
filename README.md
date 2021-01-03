@@ -25,7 +25,7 @@ only people with actual connections can proceed - the mechanism TBD
 useful info:
 - name
 - birthdate
-- contact information
+- contact information (mobile number or email is required)
 - jobs
 - skills
 ```
