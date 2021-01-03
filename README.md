@@ -17,7 +17,7 @@ Your local professional network!
 - Terraform
 - Travis
 
-## Features
+## Feature Roadmap
 - Basic Social Networking
 ```
 only people with actual connections can proceed - the mechanism TBD
@@ -29,11 +29,16 @@ useful info:
 - jobs
 - skills
 ```
-- Meetups
-```
-users think of something they want to do at the moment (time + location data), and suggest "miiingling activities"
-```
 - Information Extraction
 ```
 by installing a chrome/safari extension, users can magically scan and extract skills, info from their linked-in or fb profile and integrate that information
 ```
+- Advanced Networking
+```
+tiers (close friends, acquaintance, worked at the same company)
+```
+- Meetups
+```
+users think of something they want to do at the moment (time + location data), and suggest "miiingling activities"
+```
+
