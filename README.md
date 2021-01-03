@@ -18,15 +18,15 @@ Your local professional network!
 - Travis
 
 ## Features
-- [Basic Social Networking]
+- Basic Social Networking
 ```
 only people with actual connections can proceed
 ```
-- [Meetups]
+- Meetups
 ```
 users think of something they want to do at the moment (time + location data), and suggest "miiingling activities"
 ```
-- [Information Extraction]
+- Information Extraction
 ```
 by installing a chrome/safari extension, users can magically scan and extract skills, info from their linked-in or fb profile and integrate that information
 ```
