@@ -17,6 +17,13 @@ Your local professional network!
 - Travis
 
 # Feature Roadmap
+- Seed Infra
+```
+create a dummy micronaut app and push it to dockerhub (nothing fancy just a "ping")
+we already have a TF template for EKS + api gateway, so lets do that first (using spot instances)
+create a simple mobile app with nothing but a simple ping on it
+once we have an api in dev, we can begin integrating it with FE
+```
 - Basic Social Profile
 ```
 basic stuff, no networking feature yet, anyone can join, 
