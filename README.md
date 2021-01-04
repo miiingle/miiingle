@@ -23,18 +23,25 @@ create a dummy micronaut app and push it to dockerhub (nothing fancy just a "pin
 we already have a TF template for EKS + api gateway, so lets do that first (using spot instances)
 create a simple mobile app with nothing but a simple ping on it
 once we have an api in dev, we can begin integrating it with FE
+
+use fake db at this point first
 ```
 - Basic Social Profile
 ```
 basic stuff, no networking feature yet, anyone can join, 
 lets focus on the single user first
 
-useful info:
+login: hardcoded user
+- basic auth on server
+
+user info crud:
 - name
 - birthdate
 - contact information (mobile number or email is required)
 - jobs
 - skills
+
+use a real database
 ```
 - Mobile Information Extraction
 ```
