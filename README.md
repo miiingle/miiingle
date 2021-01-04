@@ -17,9 +17,10 @@ Your local professional network!
 - Travis
 
 # Feature Roadmap
-- Basic Social Networking
+- Basic Social Profile
 ```
-only people with actual connections can proceed - the mechanism TBD
+basic stuff, no networking feature yet, anyone can join, 
+lets focus on the single user first
 
 useful info:
 - name
@@ -34,6 +35,7 @@ by installing a chrome/safari extension, users can magically scan and extract sk
 ```
 - Advanced Networking
 ```
+only people with actual connections can proceed - the mechanism TBD
 tiers (close friends, acquaintance, worked at the same company)
 ```
 - Meetups
