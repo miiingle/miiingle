@@ -36,8 +36,13 @@ useful info:
 - jobs
 - skills
 ```
-- Information Extraction
+- Mobile Information Extraction
 ```
+run a web browser and let the mobile app extract the entire page
+```
+- Desktop Information Extraction
+```
+create a mac app
 by installing a chrome/safari extension, users can magically scan and extract skills, info from their linked-in or fb profile and integrate that information
 ```
 - Advanced Networking
