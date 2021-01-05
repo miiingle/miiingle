@@ -56,6 +56,11 @@ by installing a chrome/safari extension, users can magically scan and extract sk
 ```
 only people with actual connections can proceed - the mechanism TBD
 tiers (close friends, acquaintance, worked at the same company)
+- Photo Vault
+```
+a photo storage service, data is secured/locked by default
+a good exercise for permissions / micronaut security
+```
 ```
 - Meetups
 ```
