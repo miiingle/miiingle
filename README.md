@@ -17,9 +17,16 @@ Your local professional network!
 - Travis
 
 # Feature Roadmap
-- Seed Infra
+- Seed Part 1: Standalone Server
 ```
-create a dummy micronaut app and push it to dockerhub (nothing fancy just a "ping")
+create a micronaut app with the following features:
+jwt login
+data-reactive jdbc
+postgres
+open api docs
+```
+- Seed Part 2: Deployment to AWS
+```
 we already have a TF template for EKS + api gateway, so lets do that first (using spot instances)
 create a simple mobile app with nothing but a simple ping on it
 once we have an api in dev, we can begin integrating it with FE
