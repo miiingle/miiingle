@@ -30,8 +30,6 @@ open api docs
 we already have a TF template for EKS + api gateway, so lets do that first (using spot instances)
 create a simple mobile app with nothing but a simple ping on it
 once we have an api in dev, we can begin integrating it with FE
-
-use fake db at this point first
 ```
 - Basic Social Profile
 ```
