@@ -24,12 +24,24 @@ class IndexControllerSpec extends Specification {
     @Shared @AutoCleanup @Inject @Client("/")
     RxHttpClient client
 
+    @Inject
+    TestClient tc
+
     void "test ping"() {
         given:
         IndexController.Ping response = client.toBlocking().retrieve("/hello?name=test", IndexController.Ping)
 
         expect:
         response.name == "test"
+    }
+
+    void "test ping with better client"() {
+        given:
+        tc
+        IndexController.Ping ping = tc.hello("value")
+
+        expect:
+        ping.name == "value"
     }
 
     void "upon successful authentication, the user gets an access token and a refresh token"() {
