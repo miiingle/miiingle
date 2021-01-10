@@ -4,12 +4,34 @@ import io.micronaut.http.annotation.*;
 import io.micronaut.security.annotation.Secured;
 import io.micronaut.security.rules.SecurityRule;
 
-@Secured(SecurityRule.IS_ANONYMOUS)
-@Controller("/index")
+import java.security.Principal;
+
+@Controller("/")
 public class IndexController {
 
-    @Get(uri="/", produces="text/plain")
+    //login
+
+    /*
+     *
+
+     curl -X "POST" "http://localhost:8080/login" \
+     -H 'Content-Type: application/json; charset=utf-8' \
+     -d $'{
+     "username": "sherlock",
+     "password": "password"
+     }' --verbose
+
+     */
+
+    @Secured(SecurityRule.IS_ANONYMOUS)
+    @Get(uri="/index", produces="text/plain")
     public String index() {
         return "Example Response";
+    }
+
+    @Secured(SecurityRule.IS_AUTHENTICATED)
+    @Get("/user")
+    public Principal currentUser(Principal principal) {
+        return principal;
     }
 }
