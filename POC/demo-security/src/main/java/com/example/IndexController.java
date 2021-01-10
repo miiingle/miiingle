@@ -7,7 +7,7 @@ import io.micronaut.security.rules.SecurityRule;
 
 import java.security.Principal;
 
-@Controller("/")
+@Controller
 public class IndexController {
 
     /*
