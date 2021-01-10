@@ -3,8 +3,10 @@ package com.example
 import com.nimbusds.jwt.JWTParser
 import com.nimbusds.jwt.SignedJWT
 import io.micronaut.http.HttpRequest
+import io.micronaut.http.HttpStatus
 import io.micronaut.http.client.RxHttpClient
 import io.micronaut.http.client.annotation.Client
+import io.micronaut.http.client.exceptions.HttpClientResponseException
 import io.micronaut.runtime.server.EmbeddedServer
 import io.micronaut.security.authentication.UsernamePasswordCredentials
 import io.micronaut.security.token.jwt.render.BearerAccessRefreshToken
@@ -57,5 +59,28 @@ class IndexControllerSpec extends Specification {
 
         and: 'access token is a JWT'
         JWTParser.parse(rsp.accessToken) instanceof SignedJWT
+    }
+
+    void "user with admin role"() {
+        when: 'Login endpoint is called with valid credentials'
+        UsernamePasswordCredentials creds = new UsernamePasswordCredentials("admin", "admin")
+        HttpRequest request = HttpRequest.POST('/login', creds)
+        BearerAccessRefreshToken rsp = client.toBlocking().retrieve(request, BearerAccessRefreshToken)
+
+        then:
+        rsp.username == 'admin'
+        rsp.roles.contains("ADMIN")
+
+        and: 'access token is a JWT'
+        JWTParser.parse(rsp.accessToken) instanceof SignedJWT
+    }
+
+    void "should be unauthorized"() {
+        when:
+        client.toBlocking().exchange("/")
+
+        then:
+        HttpClientResponseException e = thrown()
+        e.status == HttpStatus.UNAUTHORIZED
     }
 }

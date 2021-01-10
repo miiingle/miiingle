@@ -14,6 +14,7 @@ import org.reactivestreams.Publisher;
 
 import javax.inject.Singleton;
 import java.util.ArrayList;
+import java.util.Collections;
 
 @Singleton
 public class MyAuthProvider implements AuthenticationProvider {
@@ -24,6 +25,10 @@ public class MyAuthProvider implements AuthenticationProvider {
             if (authenticationRequest.getIdentity().equals("sherlock") &&
                     authenticationRequest.getSecret().equals("password")) {
                 emitter.onNext(new UserDetails((String) authenticationRequest.getIdentity(), new ArrayList<>()));
+                emitter.onComplete();
+            } else if (authenticationRequest.getIdentity().equals("admin") &&
+                    authenticationRequest.getSecret().equals("admin")) {
+                emitter.onNext(new UserDetails((String) authenticationRequest.getIdentity(), Collections.singletonList("ADMIN")));
                 emitter.onComplete();
             } else {
                 emitter.onError(new AuthenticationException(new AuthenticationFailed()));
