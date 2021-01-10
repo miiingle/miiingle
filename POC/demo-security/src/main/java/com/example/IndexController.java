@@ -9,10 +9,11 @@ import java.security.Principal;
 @Controller("/")
 public class IndexController {
 
-    //login
-
     /*
      *
+
+    login
+    https://micronaut-projects.github.io/micronaut-security/latest/guide/#login
 
      curl -X "POST" "http://localhost:8080/login" \
      -H 'Content-Type: application/json; charset=utf-8' \
