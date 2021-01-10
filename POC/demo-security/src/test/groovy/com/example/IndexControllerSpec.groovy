@@ -53,7 +53,7 @@ class IndexControllerSpec extends Specification {
         then:
         rsp.username == 'sherlock'
         rsp.accessToken
-        //rsp.refreshToken
+        rsp.refreshToken
 
         and: 'access token is a JWT'
         JWTParser.parse(rsp.accessToken) instanceof SignedJWT
